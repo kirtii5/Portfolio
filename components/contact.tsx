@@ -1,12 +1,9 @@
-"use client";
-
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { TextField, Button } from "@mui/material";
 import { Send, Email, Phone, LocationOn } from "@mui/icons-material";
 import { toast } from "sonner";
 
-// Access key from .env
 const accessKey = process.env.NEXT_PUBLIC_PROJECT_ACCESS_KEY;
 
 export default function Contact() {
@@ -32,9 +29,7 @@ export default function Contact() {
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
@@ -56,6 +51,47 @@ export default function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const textFieldStyles = {
+    "& .MuiOutlinedInput-root": {
+      color: "rgba(0,0,0,0.87)", // Light mode text color
+      "& fieldset": {
+        borderColor: "rgba(0,0,0,0.23)",
+      },
+      "&:hover fieldset": {
+        borderColor: "rgba(0,0,0,0.6)",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "primary.main",
+      },
+      "& input::placeholder": {
+        opacity: 1, // Ensure it's visible
+        color: "rgba(0,0,0,0.6)",
+      },
+    },
+    "& .MuiInputLabel-root": { color: "rgba(0,0,0,0.6)" },
+    "& .MuiOutlinedInput-root.Mui-error fieldset": {
+      borderColor: "error.main",
+    },
+
+    // Dark mode overrides
+    "@media (prefers-color-scheme: dark)": {
+      "& .MuiOutlinedInput-root": {
+        color: "rgba(255,255,255,0.87)", // Text color in dark mode
+        "& fieldset": {
+          borderColor: "rgba(255,255,255,0.3)",
+        },
+        "&:hover fieldset": {
+          borderColor: "rgba(255,255,255,0.5)",
+        },
+        "& input::placeholder": {
+          color: "rgba(255,255,255,0.6)", // Placeholder in dark mode
+          opacity: 1,
+        },
+      },
+      "& .MuiInputLabel-root": { color: "rgba(255,255,255,0.6)" },
+    },
   };
 
   return (
@@ -164,6 +200,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                sx={textFieldStyles}
               />
               <TextField
                 fullWidth
@@ -173,6 +210,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                sx={textFieldStyles}
               />
               <TextField
                 fullWidth
@@ -183,6 +221,7 @@ export default function Contact() {
                 required
                 multiline
                 rows={6}
+                sx={textFieldStyles}
               />
               <motion.div
                 whileHover={{ scale: 1.02 }}

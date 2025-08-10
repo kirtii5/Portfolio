@@ -73,10 +73,8 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <IconButton
-                onClick={() => setIsOpen(true)}
-                className="text-gray-700 dark:text-gray-300">
-                <Menu />
+              <IconButton onClick={() => setIsOpen(true)} className="md:hidden">
+                <Menu className="text-gray-700 dark:text-gray-100" />
               </IconButton>
             </div>
           </div>
@@ -88,15 +86,15 @@ export default function Navbar() {
         anchor="right"
         open={isOpen}
         onClose={() => setIsOpen(false)}
+        ModalProps={{ disablePortal: true }}
         PaperProps={{
-          className: "w-64 bg-white dark:bg-gray-800",
+          className:
+            "w-64 bg-white dark:bg-gray-900 transition-colors duration-300",
         }}>
         <div className="flex justify-between items-center p-4 border-b dark:border-gray-700">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Portflio
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-700">Portflio</h2>
           <IconButton onClick={() => setIsOpen(false)}>
-            <Close className="text-gray-700 dark:text-gray-300" />
+            <Close className="text-gray-700 dark:text-gray-700" />
           </IconButton>
         </div>
         <List>
@@ -104,10 +102,10 @@ export default function Navbar() {
             <ListItem
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
+              className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100">
               <ListItemText
                 primary={item.name}
-                className="text-gray-900 dark:text-white"
+                className="text-gray-900 dark:hover:text-gray-100"
               />
             </ListItem>
           ))}
