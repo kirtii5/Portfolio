@@ -67,6 +67,22 @@ export default function Projects() {
       githubUrl: "https://github.com/kirtii5/WanderLust/", // Add GitHub repo if available
     },
     {
+      title: "Weather App",
+      description:
+        "A simple yet visually appealing weather application built with React and Material-UI. It allows users to search for weather by city name and fetches live data from the OpenWeatherMap API.",
+      image: "/weatherApp.png",
+      technologies: [
+        "React",
+        "Material-UI",
+        "OpenWeatherMap API",
+        "Framer Motion",
+        "React Icons",
+        "Tailwind CSS",
+      ],
+      liveUrl: "https://react-weather-app-kirtii.netlify.app/",
+      githubUrl: "https://github.com/kirtii5/React-Weather-App",
+    },
+    {
       title: "Taskly",
       description:
         "A to-do list that allows users to manage their tasks efficiently. Key features include adding, editing, deleting tasks, marking them as completed, and performing bulk actions like clearing all or converting tasks to uppercase.",
