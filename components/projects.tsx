@@ -46,7 +46,6 @@ export default function Projects() {
       liveUrl: "https://quizlyy.netlify.app/",
       githubUrl: "https://github.com/Quizllyy/Quiz-App", // Add GitHub repo if available
     },
-
     {
       title: "WanderLust",
       description:
@@ -66,6 +65,21 @@ export default function Projects() {
       liveUrl: "https://wanderlust-weqc.onrender.com/listings",
       githubUrl: "https://github.com/kirtii5/WanderLust/", // Add GitHub repo if available
     },
+  {
+    title: "Talkie",
+    description:
+      "A friendly AI chatbot web app built with Next.js, Tailwind CSS, and OpenAI GPT-4o-mini. Features a responsive chat interface, conversation history, and optional Spline 3D design on desktop.",
+    image: "/Talkie.jpg",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "OpenAI GPT-4o-mini",
+      "Spline 3D",
+    ],
+    liveUrl: "https://talkie-chatbot.netlify.app/",
+    githubUrl: "https://github.com/kirtii5/Talkie",
+  },
     {
       title: "Weather App",
       description:
