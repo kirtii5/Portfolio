@@ -70,7 +70,7 @@ export default function About() {
 
               {/* Resume Button */}
               <motion.a
-                href="https://drive.google.com/file/d/1MrRHQe6n0aBU0BpZJ0p8kVCgd0VAOwhG/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1apNnW4Ab2PPk3NCIZiWBqbPb4tTLit2z/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
