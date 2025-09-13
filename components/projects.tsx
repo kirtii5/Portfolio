@@ -69,7 +69,7 @@ export default function Projects() {
     title: "Talkie",
     description:
       "A friendly AI chatbot web app built with Next.js, Tailwind CSS, and OpenAI GPT-4o-mini. Features a responsive chat interface, conversation history, and optional Spline 3D design on desktop.",
-    image: "/Talkie.jpg",
+    image: "/Screenshot 2025-09-14 022644.png",
     technologies: [
       "Next.js",
       "React",
